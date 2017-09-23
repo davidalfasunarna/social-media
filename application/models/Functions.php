@@ -68,7 +68,7 @@ class Functions extends CI_Model
         $q = $this->db->where('login', $username)
 
             ->where('password', $pass)
-
+            
             ->get('users');
 
         if ($q->row('id')) {
@@ -77,6 +77,13 @@ class Functions extends CI_Model
 
         }
 
+    }
+    public function check_active_user($id)
+    {
+        $q = $this->db->select('status')
+            ->where('id', $id)
+            ->get('users');
+        return $q->row('status');
     }
     public function new_post($content, $poster, $date)
     {
