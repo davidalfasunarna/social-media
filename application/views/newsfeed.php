@@ -2,6 +2,7 @@
 $this->Functions->get_header();
 $this->Functions->get_navbar();
 ?>
+<?= link_tag('includes/css/newsfeed.css'); ?>
 <div class="container-fluid">
 	<main class="row">
 	<div class="newsfeed_left pull-left col-lg-2 col-sm-12">
@@ -10,11 +11,6 @@ $this->Functions->get_navbar();
 	<div class="col-lg-1"></div>
 	<div class="feed newsfeed_center col-lg-6 col-sm-12">
 		<?php
-		$this->load->view('includes/feed_item');
-		$this->load->view('includes/feed_item');
-		$this->load->view('includes/feed_item');
-		$this->load->view('includes/feed_item');
-		$this->load->view('includes/feed_item');
 		$this->load->view('includes/feed_item');
 		?>
 	</div>

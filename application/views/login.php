@@ -1,10 +1,11 @@
 <?php
 $this->Functions->get_header();?>
+<?= link_tag('includes/css/login.css'); ?>
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3 col-sm-12">
-            <div class="login_view card">
-                <h4 class="text-center">Login to Meet The World !</h4>
+            <div class="login_view card login-box">
+                <h4 class="text-center">Hey There!</h4>
                 <?php if ($this->session->flashdata('registered')): ?>
                 <div class="alert alert-dismissible alert-success">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -30,7 +31,7 @@ $this->Functions->get_header();?>
                     <input type="password" class="form-control" name="password" placeholder="Password" />
                     <div class="clearfix"></div>
                     <div class="divider"></div>
-                    <button class="btn btn-primary pull-right" type="submit">Login</button>
+                    <button class="btn btn-primary button-save pull-right" type="submit">Login</button>
                 </form>
                 <div class="divider"></div> <a href="<?=base_url('register')?>">Not a Member??</a> </div>
             </div>

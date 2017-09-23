@@ -1,5 +1,25 @@
 body {
 	background-color: #fafafa;
+	font-family: 'Inconsolata', monospace;
+	font-size: 16px;
+}
+h1{
+	font-size: 44px;
+}
+h2{
+	font-size: 38px;
+}	
+h3{
+	font-size: 32px;
+}
+h4{
+	font-size: 26px;
+}
+h5{
+	font-size: 20px;
+}
+h6{
+	font-size: 16px;
 }
 .login_view {
 	margin-top: 100px;
@@ -42,4 +62,11 @@ cursor: pointer;
 .feed_actions .action .do_comment input {
 margin-top: -10px;
 padding-right: 35px;
+}
+.button-save{
+	background-color: #F24D16;
+	font-size: 16px;
+}
+.navbar{
+	background-color: #4CD4B0;
 }
