@@ -11,17 +11,27 @@ $this->Functions->get_header();?>
                     <?=$this->session->flashdata('registered');?>
                 </div>
                 <?php endif;?>
+                <?php if ($this->session->flashdata('failed_login')): ?>
+                <div class="alert alert-dismissible alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <?=$this->session->flashdata('failed_login');?>
+                </div>
+                <?php endif;?>
+                <?php if ($this->session->flashdata('unactive_user')): ?>
+                <div class="alert alert-dismissible alert-info">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <?=$this->session->flashdata('unactive_user');?>
+                </div>
+                <?php endif;?>
                 <p class="text-danger" id="login_errors"></p>
-                <?=form_open('#');?>
-                <div class="form-group">
-                    <?=form_input('username', '', array('class' => 'form-control', 'placeholder' => 'Username', 'data-validation' => 'required', 'id' => 'log_username_field'));?>
+                <form class="form-signin" action="<?php echo base_url('login/try_login'); ?>" method="post">
+                    <input type="text" class="form-control" name="username" placeholder="Username" />
                     <div class="clearfix"></div>
-                    <?=form_password('password', '', array('class' => 'form-control', 'placeholder' => 'Password', 'data-validation' => 'required', 'id' => 'log_pass_field'));?>
+                    <input type="password" class="form-control" name="password" placeholder="Password" />
                     <div class="clearfix"></div>
                     <div class="divider"></div>
-                    <?=form_submit('submit', 'Login', array('class' => 'btn btn-primary pull-right', 'onclick' => 'javascript: check_login(); return false;'));?>
-                </div>
-                <?=form_close();?>
+                    <button class="btn btn-primary pull-right" type="submit">Login</button>
+                </form>
                 <div class="divider"></div> <a href="<?=base_url('register')?>">Not a Member??</a> </div>
             </div>
         </div>
