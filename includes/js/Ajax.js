@@ -11,7 +11,7 @@ function check_login() {
     }
     var request = $.ajax({
         type: 'POST',
-        url: 'http://localhost/Codeigniter-Social-Network/ajax/login',
+        url: 'http://localhost/social-media/ajax/login',
         data: data,
         dataType: 'json',
         encode: true
@@ -43,7 +43,7 @@ function create_post() {
         }
         formData.append("cb_csrf_secured", $('#cb_csrf_secured').val());
         var request = $.ajax({
-            url: "http://localhost/Codeigniter-Social-Network/Ajax/new_post",
+            url: "http://localhost/social-media/Ajax/new_post",
             type: 'POST',
             data: formData,
             cache: false,

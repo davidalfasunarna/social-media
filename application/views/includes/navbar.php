@@ -9,6 +9,7 @@
                     <li><a href="#">Find Friends</a></li>
                     <li><a href="#">Notifications</a></li>
                     <li><a href="#">Profile</a></li>
+                    <li><a href="<?=base_url('login/logout')?>">Logout</a></li>
                 </ul>
             </div>
         </div>

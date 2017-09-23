@@ -6,6 +6,7 @@ class Register extends MEET_Controller
     {
         $this->load->view('register', array('title' => 'Register on Meet', 'page_class' => 'signup'));
     }
+    
     public function do_it()
     {
         $fn = $this->input->post('fname');
@@ -32,9 +33,21 @@ class Register extends MEET_Controller
 
             $this->session->set_flashdata('registered', 'Account successfully created. Check you email to activate account. Thanks.');
 
+            $config = Array(
+                'protocol' => 'smtp',
+                'smtp_host' => 'smtp.mailtrap.io',
+                'smtp_port' => 2525,
+                'smtp_user' => '959b752b4dbf02',
+                'smtp_pass' => '34b1d772af1043',
+                'crlf' => "\r\n",
+                'newline' => "\r\n"
+            );
+
             $this->load->library('email');
 
-            $this->email->from('no-reply@meet.com', 'Meet');
+            $this->email->initialize($config);
+
+            $this->email->from('admin@social-media.com', 'Meet');
 
             $this->email->to($email);
 
