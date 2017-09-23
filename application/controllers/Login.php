@@ -7,7 +7,6 @@ class Login extends MEET_Controller
         if ($this->session->userdata('user_id')) {
 
             return redirect('newsfeed', 'refresh');
-
         }
         if ($this->session->userdata('user_id')) {
             return redirect('newsfeed', 'refresh');

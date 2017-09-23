@@ -9,9 +9,10 @@ function check_login() {
         'pass': pass,
         'cb_csrf_secured': $('#cb_csrf_secured').val()
     }
+    var uri = BASE_URL + "ajax/login";
     var request = $.ajax({
         type: 'POST',
-        url: 'http://localhost/social-media/ajax/login',
+        url: uri,
         data: data,
         dataType: 'json',
         encode: true
@@ -42,8 +43,9 @@ function create_post() {
             }
         }
         formData.append("cb_csrf_secured", $('#cb_csrf_secured').val());
+        var uri = BASE_URL + "Ajax/new_post";
         var request = $.ajax({
-            url: "http://localhost/social-media/Ajax/new_post",
+            url: uri,
             type: 'POST',
             data: formData,
             cache: false,
