@@ -47,7 +47,7 @@ class Register extends MEET_Controller
 
             $this->email->initialize($config);
 
-            $this->email->from('admin@social-media.com', 'Meet');
+            $this->email->from('admin@social.davidalfasunarna.me', 'Meet');
 
             $this->email->to($email);
 
