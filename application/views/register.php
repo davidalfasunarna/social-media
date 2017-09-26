@@ -1,10 +1,11 @@
 <?php
 $this->Functions->get_header(); ?>
+<?= link_tag('includes/css/register.css'); ?>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 col-sm-12">
                 <div class="login_view card">
-                    <h4 class="text-center">Get Ready to be amazed. !!!</h4>
+                    <h4 class="text-center">Register With Us!</h4>
                     <br>
                     <br>
                     <div class="form-group">
@@ -35,7 +36,7 @@ $this->Functions->get_header(); ?>
                             </div>
                             <div class="divider"></div>
                             <center>
-                                <button role="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                                <button role="submit" class="btn btn-primary btn-lg button-save">Sign Up</button>
                             </center>
                             <?= form_close(); ?>
                     </div>
