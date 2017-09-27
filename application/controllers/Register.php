@@ -33,19 +33,19 @@ class Register extends MEET_Controller
 
             $this->session->set_flashdata('registered', 'Account successfully created. Check you email to activate account. Thanks.');
 
-            $config = Array(
-                'protocol' => 'smtp',
-                'smtp_host' => 'smtp.sendgrid.net',
-                'smtp_user' => 'davidalfasunarna',
-                'smtp_pass' => 'kelompok3',
-                'smtp_port' => 587,
-                'crlf' => "\r\n",
-                'newline' => "\r\n"
-            );
+            // $config = Array(
+            //     'protocol' => 'smtp',
+            //     'smtp_host' => 'smtp.sendgrid.net',
+            //     'smtp_user' => 'davidalfasunarna',
+            //     'smtp_pass' => 'kelompok3',
+            //     'smtp_port' => 587,
+            //     'crlf' => "\r\n",
+            //     'newline' => "\r\n"
+            // );
 
             $this->load->library('email');
 
-            $this->email->initialize($config);
+            //$this->email->initialize($config);
 
             $this->email->from('admin@social.davidalfasunarna.me', 'Meet');
 
