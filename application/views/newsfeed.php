@@ -91,8 +91,8 @@
                                         Stay update with your Friends.
 										.
 									</p>
-                                    <form class="form-newsletter halves" >
-                                        <input type="text" name="post" class="mb0  " placeholder="What's in your mind?" />
+                                    <form class="form-newsletterx halvesx" method="POST" action="<?php echo base_url()."post";?>" >
+                                        <input type="text" name="content" class="mb0  " placeholder="What's in your mind?" />
                                         <button type="submit" class="btn-white mb0">Post!</button>                                       
 									</form>
 								</div>
@@ -117,15 +117,16 @@
 						</div>
                         <div class="row masonry masonryFlyIn mb40">
                             
-                            <!--end of snippet-->
+							<?php foreach($q_post->result() as $row):?>
                             <div class="col-sm-6 post-snippet masonry-item">
                                 <a href="#">
                                     <blockquote>
-                                        Here's a lovely quote post you can use to say something poignant or important.
-                                        <span class="author">Important Person - September 21, 2015</span>
+                                        <?php echo $row->content;?>
+                                        <span class="author"><?php echo $row->date;?></span>
 									</blockquote>
 								</a>
 							</div>
+							<?php endforeach;?>
                             <!--end of snippet-->
 						</div>
 						

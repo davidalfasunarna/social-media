@@ -97,4 +97,21 @@ class Functions extends CI_Model
             ->insert('posts');
 
     }
+	
+   public function get_my_post()
+    {
+		  $poster = $this->session->userdata('user_id');
+        $q = $this->db->where('poster_id', $poster)
+
+               
+            ->get('posts');
+			
+
+        if ($q->row('id')) {
+
+            return $q;
+
+        }
+
+    }
 }

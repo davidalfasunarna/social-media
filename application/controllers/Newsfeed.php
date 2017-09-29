@@ -9,6 +9,9 @@ class Newsfeed extends MEET_Controller
             return redirect('login', 'refresh');
 
         }
-        $this->load->view('newsfeed', array('title' => 'Newsfeed', 'page_class' => 'newfeed'));
+		$data['q_post']=$this->Functions->get_my_post();
+		$data['title']='Newsfeed';
+		$data['page_class']='newfeed';
+        $this->load->view('newsfeed', $data);
     }
 }
