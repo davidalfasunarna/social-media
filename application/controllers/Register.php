@@ -27,7 +27,7 @@ class Register extends MEET_Controller
 
         $dn = $fn . ' ' . $ln;
 
-        $token = bin2hex(random_bytes(12));
+        $token = bin2hex(md5("sjaksjaksjaksjkasjakjask"));
 
         if ($this->Functions->register($fn, $ln, $dn, $email, $username, md5($pass), $token)) {
 
