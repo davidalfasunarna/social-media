@@ -117,7 +117,9 @@
 						</div>
                         <div class="row masonry masonryFlyIn mb40">
                             
-							<?php foreach($q_post->result() as $row):?>
+							<?php 
+							if ($q_post) {
+							foreach($q_post->result() as $row):?>
                             <div class="col-sm-6 post-snippet masonry-item">
                                 <a href="#">
                                     <blockquote>
@@ -126,7 +128,8 @@
 									</blockquote>
 								</a>
 							</div>
-							<?php endforeach;?>
+							<?php endforeach;
+							}?>
                             <!--end of snippet-->
 						</div>
 						
