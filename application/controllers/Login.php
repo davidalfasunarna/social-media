@@ -9,7 +9,7 @@ class Login extends MEET_Controller
             return redirect('newsfeed', 'refresh');
         }
 
-        $this->load->view('login', array('title' => 'Login to Retro', 'page_class' => 'login'));
+        $this->load->view('login', array('title' => 'Login', 'page_class' => 'login'));
     }
 
     public function try_login()
