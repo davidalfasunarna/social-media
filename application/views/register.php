@@ -11,10 +11,10 @@ $this->Functions->get_header(); ?>
                     <div class="form-group">
                         <?= form_open('register/do_it'); ?>
                             <div class="col-md-6 col-sm-12">
-                                <?= form_input('fname', '', array('class'=>'form-control', 'placeholder'=>'First Name', 'data-validation'=>'required alphanumeric')); ?>
+                                <?= form_input('fname', '', array('class'=>'form-control', 'placeholder'=>'First Name', 'data-validation'=>'required')); ?>
                             </div>
                             <div class="col-md-6 col-sm-12">
-                                <?= form_input('lname', '', array('class'=>'form-control', 'placeholder'=>'Last Name', 'data-validation'=>'required alphanumeric')); ?>
+                                <?= form_input('lname', '', array('class'=>'form-control', 'placeholder'=>'Last Name', 'data-validation'=>'required')); ?>
                             </div>
                             <div class="clearfix"></div>
                             <br>
