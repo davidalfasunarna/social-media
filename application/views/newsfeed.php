@@ -170,18 +170,13 @@
                             <h6 class="title">Recent Posts</h6>
                             <hr>
                             <ul class="link-list recent-posts">
+								<?php foreach($q_post->result() as $row):?>
                                 <li>
-                                    <a href="#">A simple image post for starters</a>
-                                    <span class="date">September 23, 2015</span>
+                                    <a href="#"> <?php echo $row->content;?></a>
+                                    <span class="date"><?php echo $row->date;?></span>
 								</li>
-                                <li>
-                                    <a href="#">An audio post for good measure</a>
-                                    <span class="date">September 19, 2015</span>
-								</li>
-                                <li>
-                                    <a href="#">A thoguhtful blockquote post on life</a>
-                                    <span class="date">September 07, 2015</span>
-								</li>
+								<?php endforeach;?>
+                               
 							</ul>
 						</div>
 						
