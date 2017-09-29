@@ -165,20 +165,7 @@
 								
 							</ul>
 						</div>
-                        <!--end of widget-->
-                        <div class="widget">
-                            <h6 class="title">Recent Posts</h6>
-                            <hr>
-                            <ul class="link-list recent-posts">
-								<?php foreach($q_post->result() as $row):?>
-                                <li>
-                                    <a href="#"> <?php echo $row->content;?></a>
-                                    <span class="date"><?php echo $row->date;?></span>
-								</li>
-								<?php endforeach;?>
-                               
-							</ul>
-						</div>
+                       
 						
                         <!--end of widget-->
 					</div>

@@ -98,13 +98,14 @@ class Functions extends CI_Model
 
     }
 	
-   public function get_my_post()
+	
+	  public function get_my_post()
     {
-		  $poster = $this->session->userdata('user_id');
-        $q = $this->db->where('poster_id', $poster)
-
-               
-            ->get('posts');
+		$poster = $this->session->userdata('user_id');
+     
+		$this->db->where('poster_id', $poster);
+		$this->db->order_by('date','desc');       
+		$q=$this->db->get('posts');
 			
 
         if ($q->row('id')) {
@@ -114,4 +115,5 @@ class Functions extends CI_Model
         }
 
     }
+	
 }

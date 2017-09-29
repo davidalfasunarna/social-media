@@ -27,27 +27,27 @@ class Register extends MEET_Controller
 
         $dn = $fn . ' ' . $ln;
 
-        $token = bin2hex(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM));
+        $token = bin2hex(md5("sjaksjaksjaksjkasjakjask"));
 
         if ($this->Functions->register($fn, $ln, $dn, $email, $username, md5($pass), $token)) {
 
             $this->session->set_flashdata('registered', 'Account successfully created. Check you email to activate account. Thanks.');
 
-            $config = Array(
-                'protocol' => 'smtp',
-                'smtp_host' => 'smtp.sendgrid.net',
-                'smtp_user' => 'davidalfasunarna',
-                'smtp_pass' => 'kelompok3',
-                'smtp_port' => 587,
-                'crlf' => "\r\n",
-                'newline' => "\r\n"
-            );
+            // $config = Array(
+            //     'protocol' => 'smtp',
+            //     'smtp_host' => 'smtp.sendgrid.net',
+            //     'smtp_user' => 'davidalfasunarna',
+            //     'smtp_pass' => 'kelompok3',
+            //     'smtp_port' => 587,
+            //     'crlf' => "\r\n",
+            //     'newline' => "\r\n"
+            // );
 
             $this->load->library('email');
 
-            $this->email->initialize($config);
+            //$this->email->initialize($config);
 
-            $this->email->from('admin@social.davidalfasunarna.me', 'Meet');
+            $this->email->from('admin@social.davidalfasunarna.me', 'Retro');
 
             $this->email->to($email);
 
@@ -55,7 +55,25 @@ class Register extends MEET_Controller
 
             $this->email->subject('Activate Account');
 
-            $content = "<h3>Thanks for registering on Meet.</h3><br><h4>Activate your account to rock.</h4><br><a href='" . base_url("register/activate/{$username}/{$token}") . "'>Activate my account now.</a>";
+            // $content = "
+            // <html>    
+            //     <head></head>
+            //     <body style='background-color: #4CD4B0 !important;'>
+            //         <h3>Thanks for registering on Retro.</h3>
+            //         <br>
+            //         <h4>Activate your account to rock.</h4>
+            //         <br>
+            //         <a href='" . base_url("register/activate/{$username}/{$token}") . "'>Activate my account now.</a>
+            //     </body>
+            // </html>
+            // ";
+            $url = 
+            $data = Array(
+                'username' => $username,
+                'token' => $token
+            );
+
+            $content = $this->load->view('email',$data,true);
 
             $this->email->message($content);
 
