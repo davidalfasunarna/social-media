@@ -35,10 +35,10 @@ class Register extends MEET_Controller
 
             $config = Array(
                 'protocol' => 'smtp',
-                'smtp_host' => 'smtp.mailtrap.io',
-                'smtp_port' => 2525,
-                'smtp_user' => '959b752b4dbf02',
-                'smtp_pass' => '34b1d772af1043',
+                'smtp_host' => 'smtp.sendgrid.net',
+                'smtp_user' => 'davidalfasunarna',
+                'smtp_pass' => 'kelompok3',
+                'smtp_port' => 587,
                 'crlf' => "\r\n",
                 'newline' => "\r\n"
             );
@@ -47,7 +47,7 @@ class Register extends MEET_Controller
 
             $this->email->initialize($config);
 
-            $this->email->from('admin@social-media.com', 'Meet');
+            $this->email->from('admin@social.davidalfasunarna.me', 'Meet');
 
             $this->email->to($email);
 
