@@ -21,7 +21,8 @@ class Post extends MEET_Controller
 			$data['q_post']=$this->Functions->get_my_post();
 			$data['title']='Newsfeed';
 			$data['page_class']='newfeed';
-			$this->load->view('newsfeed', $data);
+			
+			return redirect('', 'refresh');
 		
 		}
     }
