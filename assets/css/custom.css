@@ -1,0 +1,17 @@
+/****** PLACE YOUR CUSTOM STYLES HERE ******/
+
+.droplogintxt input{
+	color: #777 !important;
+}
+
+.alert-warning {	
+	  background-color: white;
+  border: 1px solid #FF0000 !important;
+  color: #FF0000 !important;
+}
+
+.alert-info {
+    background-color: white;
+    border-color: #bce8f1;
+    color: #bce8f1;
+}
