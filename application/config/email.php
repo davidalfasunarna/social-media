@@ -12,5 +12,5 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 $config['protocol']		= 'smtp';
 $config['smtp_port']	= '587';
 $config['smtp_host']	= 'smtp.sendgrid.net';
-$config['smtp_user']	= 'davidalfasunarna';
-$config['smtp_pass']	= 'kelompok3';
+$config['smtp_user']	= '';
+$config['smtp_pass']	= '';
